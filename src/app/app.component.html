@@ -1,8 +1,59 @@
-
+<!--
 <button (click)="savedata()">Save</button> <br><br>
 
 <button (click)="loadData()">Load</button>
 
 <div>
   <h3>{{session.id + " : " + session.name + " - "  + session.age}}</h3>
+</div> -->
+
+
+<div class="container mt-4">
+  <div class="row">
+
+    <div class="col-lg-2">
+      Date :-
+      <input class="form-control" type="date" [(ngModel)]="tDate">
+    </div>
+
+    <div class="col-lg-2">
+      Time :-
+      <input class="form-control" type="time" [(ngModel)]="tTime">
+    </div>
+
+    <div class="col-lg-8">
+      Task :-
+      <input class="form-control" type="text" [(ngModel)]="tTask">
+    </div>
+
+    <div class="col-lg-12">
+      <button class="btn btn-outline-success mt-3 d-block mx-auto" (click)="save()">Save</button>
+    </div>
+
+  </div>
+
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <table class="table table-bordered table-stripped">
+
+        <tr>
+          <th></th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Task</th>
+        </tr>
+
+        <tr *ngFor="let t of tasks">
+          <td>
+            <button class="btn btn-outline-danger">Delete</button>
+          </td>
+          <td>{{t.date}}</td>
+          <td>{{t.time}}</td>
+          <td>{{t.task}}</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
 </div>
